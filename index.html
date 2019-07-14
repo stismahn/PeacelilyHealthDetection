@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lily health check</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="lily-frame">
+      <span id="sym"></span>
+      <span id="prob"></span>
+    <div class="tab-content" id="TabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="lily-box">
+          <h1 class="lily-headline">Peace Lily health check</h1>
+          <div class="lily-divider"></div>
+          <p class="lily-info">This is the image which will be predicted on by the machine learning model:</p>
+          <div class="lily-block">
+              <img id="imageToPredict" src="img/testing/dddc62.jpg" alt="Your peace lily image" />
+          </div>
+          <a class="btn btn-link" id="done-tab" data-toggle="tab" href="#done" role="tab" aria-controls="done" aria-selected="false" onclick="getFrame()">Start prediction<svg xmlns="http://www.w3.org/2000/svg" width="18" height="9" viewBox="0 0 18 9"><path fill="#1E201D" d="M13.6412877,0.64071104 C13.4803267,0.474121961 13.2124334,0.474121961 13.0458443,0.64071104 C12.8848833,0.801672109 12.8848833,1.06956536 13.0458443,1.23015123 L16.0650838,4.24939068 L0.563544777,4.24939068 C0.331295589,4.24976588 0.14669688,4.43436459 0.14669688,4.66661378 C0.14669688,4.89886297 0.331295589,5.08946489 0.563544777,5.08946489 L16.0650838,5.08946489 L13.0458443,8.10307633 C12.8848833,8.26966541 12.8848833,8.53793386 13.0458443,8.69851973 C13.2124334,8.86510881 13.4807019,8.86510881 13.6412877,8.69851973 L17.3752844,4.96452308 C17.5418735,4.80356201 17.5418735,4.53566876 17.3752844,4.37508289 L13.6412877,0.64071104 Z"/></svg></a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
+        <div class="lily-box-done">
+          <div id="lily-img" class="lily-img"></div>
+          <div class="lily-message">
+            <div class="lily-message__info">Your peace lily is ..</div>
+            <h2 id="lily-message__status" class="lily-message__status">Healthy</h2>
+            <div class="lily-divider"></div>
+            <div id="lily-message__tipp" class="lily-message__tipp">Keep up the good work! Your peace lily is in good shape.</div>
+            <a class="btn btn-link"id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="location.reload()">Give it another try <svg xmlns="http://www.w3.org/2000/svg" width="18" height="9" viewBox="0 0 18 9"><path fill="#1E201D" d="M13.6412877,0.64071104 C13.4803267,0.474121961 13.2124334,0.474121961 13.0458443,0.64071104 C12.8848833,0.801672109 12.8848833,1.06956536 13.0458443,1.23015123 L16.0650838,4.24939068 L0.563544777,4.24939068 C0.331295589,4.24976588 0.14669688,4.43436459 0.14669688,4.66661378 C0.14669688,4.89886297 0.331295589,5.08946489 0.563544777,5.08946489 L16.0650838,5.08946489 L13.0458443,8.10307633 C12.8848833,8.26966541 12.8848833,8.53793386 13.0458443,8.69851973 C13.2124334,8.86510881 13.4807019,8.86510881 13.6412877,8.69851973 L17.3752844,4.96452308 C17.5418735,4.80356201 17.5418735,4.53566876 17.3752844,4.37508289 L13.6412877,0.64071104 Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+  <script src="scripts/model.js"> </script>
+</body>
+</html>
